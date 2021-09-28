@@ -7,4 +7,3 @@ import java.lang.annotation.*;
 public @interface SPI {
     String value() default "default";
 }
-s
