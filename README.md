@@ -17,7 +17,6 @@
   |- serializer: 序列化，支持SPI拓展
   |- service: Provider提供的服务，测试用
   |- proxy: 代理，用于客户端代理，客户端调用服务接口，实际上是一个网络请求的过程
-  |- registry: 注册中心，例如 zk 注册中心
   |- transport: 网络相关，Netty 收发请求逻辑
   |- util: 工具类
  
