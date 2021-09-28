@@ -1,0 +1,2 @@
+json=org.example.serializer.JsonSerializer
+kryo=org.example.serializer.KryoSerializer
