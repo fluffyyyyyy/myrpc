@@ -8,7 +8,7 @@
 以下是重要的包的简介：
 ```
 |- myrpc
-	|- annotation：包含了一些自定义的注解，用于服务端和客户端启动时自动扫描并注册
+  |- annotation：包含了一些自定义的注解，用于服务端和客户端启动时自动扫描并注册
   |- extension：实现了一套自己的 SPI，参考 dubbo，做了简化
   |- url: 同样也是参考 dubbo 的 URL，一般是构建参数用的
   |- codec: Netty解码器
