@@ -46,17 +46,15 @@ public class ExtensionLoader<T> {
         }
         ExtensionLoader<?> extensionLoader = extensionLoaderCache.get(type);
         if (extensionLoader != null) {
-            //noinspection unchecked
             return (ExtensionLoader<S>) extensionLoader;
         }
         extensionLoader = new ExtensionLoader<>(type);
         extensionLoaderCache.putIfAbsent(type, extensionLoader);
-        //noinspection unchecked
         return (ExtensionLoader<S>) extensionLoader;
     }
 
     /**
-     * 获取默认的扩展类实例，会自动加载 @SPI 注解中的 value 指定的类实例
+     * 获取默认的扩展类实例
      *
      * @return 返回该类的注解 @SPI.value 指定的类实例
      */
@@ -73,7 +71,6 @@ public class ExtensionLoader<T> {
         T extension = extensionsCache.get(name);
         if (extension == null) {
             Object lock = createExtensionLockMap.computeIfAbsent(name, k -> new Object());
-            //noinspection SynchronizationOnLocalVariableOrMethodParameter
             synchronized (lock) {
                 extension = extensionsCache.get(name);
                 if (extension == null) {
@@ -96,13 +93,11 @@ public class ExtensionLoader<T> {
     private T createExtension(String name) {
         // 获取当前类型所有扩展类
         Map<String, Class<?>> extensionClasses = getAllExtensionClasses();
-        // 再根据名字找到对应的扩展类
         Class<?> clazz = extensionClasses.get(name);
         if (clazz == null) {
             throw new IllegalStateException("Extension not found. name=" + name + ", type=" + type.getName());
         }
         try {
-            //noinspection unchecked
             return (T) clazz.newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
             throw new IllegalStateException("Extension not found. name=" + name + ", type=" + type.getName() + ". " + e.toString());
