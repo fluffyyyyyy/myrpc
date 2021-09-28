@@ -1,8 +1,7 @@
 # myrpc
 
 #### 介绍
-这是一个基于 Netty + Zookeeper + Kryo 的简易 RPC 框架
-造轮子主要是为了巩固所学的知识，纸上得来终觉浅
+这是一个基于 Netty + Zookeeper + Kryo 的简易 RPC 框架<br>造轮子主要是为了巩固所学的知识，纸上得来终觉浅
 
 #### 目录
 以下是重要的包的简介：
@@ -10,7 +9,6 @@
 |- myrpc
   |- annotation：包含了一些自定义的注解，用于服务端和客户端启动时自动扫描并注册
   |- extension：实现了一套自己的 SPI，参考 dubbo，做了简化
-  |- url: 同样也是参考 dubbo 的 URL，一般是构建参数用的
   |- codec: Netty解码器
   |- entity：测试用的bean
   |- factory: 单例工厂
@@ -65,7 +63,7 @@
 #### 运行
 1. 环境要求：JDK8 以上、Lombok 插件
 2. 需要安装 `Zookeeper` 并运行
-3. 执行TestServer和TestClient即可
+3. 执行 TestServer 和 TestClient 即可
 
 #### 参与贡献
 1.  Fork 本仓库
