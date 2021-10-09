@@ -15,8 +15,5 @@ public class testTest
     @Test
     public void shouldAnswerWithTrue() {
 
-
-
-
     }
 }

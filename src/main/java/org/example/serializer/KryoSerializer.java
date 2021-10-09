@@ -8,7 +8,7 @@ import org.example.transport.entity.RpcResponse;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-public class KryoSerizlizer implements Serializer{
+public class KryoSerializer implements Serializer{
 
     private static final ThreadLocal<Kryo> kryoThreadLocal = ThreadLocal.withInitial(() -> {
         Kryo kryo = new Kryo();

@@ -4,7 +4,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import lombok.AllArgsConstructor;
-import org.example.serializer.KryoSerizlizer;
+import org.example.serializer.JsonSerializer;
 import org.example.codec.MyDecoder;
 import org.example.codec.MyEncoder;
 import org.example.transport.server.handler.NettyRpcServerHandler;
@@ -17,7 +17,7 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
 
-        pipeline.addLast(new MyEncoder(new KryoSerizlizer()));
+        pipeline.addLast(new MyEncoder(new JsonSerializer()));
         pipeline.addLast(new MyDecoder());
 
 

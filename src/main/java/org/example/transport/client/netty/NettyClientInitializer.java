@@ -4,8 +4,8 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
+import org.example.serializer.JsonSerializer;
 import org.example.transport.client.handler.NettyClientHandler;
-import org.example.serializer.KryoSerizlizer;
 import org.example.codec.MyDecoder;
 import org.example.codec.MyEncoder;
 
@@ -18,7 +18,7 @@ public class NettyClientInitializer extends ChannelInitializer<SocketChannel> {
         ChannelPipeline pipeline = ch.pipeline();
 
         pipeline.addLast(new IdleStateHandler(0, 5, 0, TimeUnit.SECONDS));
-        pipeline.addLast(new MyEncoder(new KryoSerizlizer()));
+        pipeline.addLast(new MyEncoder(new JsonSerializer()));
         pipeline.addLast(new MyDecoder());
 
         pipeline.addLast(new NettyClientHandler());

@@ -18,7 +18,9 @@ public interface Serializer {
             case 1:
                 return new JsonSerializer();
             case 2:
-                return new KryoSerizlizer();
+                return new KryoSerializer();
+            case 3:
+                return new HessianSerializer();
             default:
                 return null;
         }

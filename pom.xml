@@ -68,6 +68,14 @@
       <version>5.7.13</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.caucho</groupId>
+      <artifactId>hessian</artifactId>
+      <version>4.0.51</version>
+    </dependency>
+
+
+
   </dependencies>
 
 
