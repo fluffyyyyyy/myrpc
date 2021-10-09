@@ -35,7 +35,8 @@
     - [ ] ...
 - [x] 序列化
     - [x] Kryo
-    - [x] fastjson
+    - [x] Json
+    - [x] Hessian
     - [ ] ...
 - [ ] 压缩
     - [ ] gzip
